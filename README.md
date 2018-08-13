@@ -1,1 +1,1 @@
-# MapTest
+# MAP-Example

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#000000">
+  <title>My Visited Countries</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes, minimal-ui">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <link rel="stylesheet" type="text/css" href="MyResources/ThirdParty/bootstrap-3.2.0-dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="MyResources/css/main4d13.css?20170702">
+  <link rel="stylesheet" type="text/css" href="MyResources/css/app4d13.css?20170702">
+  <link rel="stylesheet" type="text/css" href="MyResources/css/cards.css">
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div class="app">
+    <div class="app-body">
+
+      <div class="app-section section-map-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="#country" data-anchor="europe" data-toggle="tab">Countries Map</a>
+                </li>
+                <li>
+                  <a href="#states" data-anchor="northAmerica" data-toggle="tab">States Map</a>
+                </li>
+
+              </ul>
+              <div class="tab-content">
+                <div id="country" class="tab-pane active">
+                  <div class="section-map-panel">
+                    <div id="mapdiv"></div>
+
+
+
+
+
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="family-light size-biggerer underline section-map-list-title">Select countries you visited</h2>
+                      <div class="section-map-list">
+                        <ul class="nav nav-tabs">
+                          <li class="active">
+                            <a href="#europe" data-anchor="europe" data-toggle="tab">Europe</a>
+                          </li>
+                          <li>
+                            <a href="#northAmerica" data-anchor="northAmerica" data-toggle="tab">North America</a>
+                          </li>
+                          <li>
+                            <a href="#southAmerica" data-anchor="southAmerica" data-toggle="tab">South America</a>
+                          </li>
+                          <li>
+                            <a href="#africa" data-anchor="africa" data-toggle="tab">Africa</a>
+                          </li>
+                          <li>
+                            <a href="#asia" data-anchor="asia" data-toggle="tab">Asia</a>
+                          </li>
+                          <li>
+                            <a href="#oceania" data-anchor="oceania" data-toggle="tab">Oceania</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content overflow-auto">
+                          <div id="europe" class="tab-pane active">
+                            <table class="table table-hover table-striped">
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                          <div id="northAmerica" class="tab-pane">
+                            <table class="table table-hover table-striped">
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                          <div id="southAmerica" class="tab-pane">
+                            <table class="table table-hover table-striped">
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                          <div id="africa" class="tab-pane">
+                            <table class="table table-hover table-striped">
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                          <div id="asia" class="tab-pane">
+                            <table class="table table-hover table-striped">
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                          <div id="oceania" class="tab-pane">
+                            <table class="table table-hover table-striped">
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4 section-map-settings">
+                      <h2 class="family-light size-biggerer underline">Settings</h2>
+                      <a href="#reset" class="btn btn-default btn-lg btn-block btn-settings-reset" style="margin-top: 40px;">
+                        <i class="fa fa-trash"></i>
+                        <span>Clear map &amp; reset colors</span>
+                      </a>
+                      <div class="row" style="margin-top:20px;">
+                        <div class="col-xs-4">
+                          <div class="form-group">
+                            <label>Map width</label>
+                            <input type="text" class="form-control" name="width" placeholder="1000px" value="1000px">
+                          </div>
+                        </div>
+                        <div class="col-xs-4">
+                          <div class="form-group">
+                            <label>Map height</label>
+                            <input type="text" class="form-control" name="height" placeholder="450px" value="450px">
+                          </div>
+                        </div>
+                        <div class="col-xs-4">
+                          <div class="form-group">
+                            <label>
+                              <input type="checkbox" name="zoomControl" checked> Zoom function</label>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label>Water</label>
+                            <div class="input-group input-colorpicker">
+                              <span class="input-group-addon" style="background-color: #535364;"></span>
+                              <input class="form-control" name="backgroundColor" type="text" placeholder="#535364" value="#535364" size="7" maxlength="7">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Visited countries</label>
+                            <div class="input-group input-colorpicker">
+                              <span class="input-group-addon" style="background-color: #84ADE9;"></span>
+                              <input class="form-control" name="colorSolid" type="text" placeholder="#84ADE9" value="#84ADE9" size="7" maxlength="7">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Unvisited countries</label>
+                            <div class="input-group input-colorpicker">
+                              <span class="input-group-addon" style="background-color: #B4B4B7;"></span>
+                              <input class="form-control" name="color" type="text" placeholder="#B4B4B7" value="#B4B4B7" size="7" maxlength="7">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label>Hover countries</label>
+                            <div class="input-group input-colorpicker">
+                              <span class="input-group-addon" style="background-color: #9EC2F7;"></span>
+                              <input class="form-control" name="rollOverColor" type="text" placeholder="#9EC2F7" value="#9EC2F7" size="7" maxlength="7">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Border</label>
+                            <div class="input-group input-colorpicker">
+                              <span class="input-group-addon" style="background-color: #666666;"></span>
+                              <input class="form-control" name="outlineColor" type="text" placeholder="#666666" value="#666666" size="7" maxlength="7">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Hover border</label>
+                            <div class="input-group input-colorpicker">
+                              <span class="input-group-addon" style="background-color: #000000;"></span>
+                              <input class="form-control" name="rollOverOutlineColor" type="text" placeholder="#000000" value="#000000" size="7" maxlength="7">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="states" class="tab-pane">
+                  <div class="section-map-panel">
+                    <div style="color: #fff; margin: 200px 32%;font-size: 30px;font-weight: bold;width: 100%;">
+                      Please wait for next release ...
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row" style="padding-top: 70px;">
+            <div class="col-sm-12">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="text/javascript" src="MyResources/ThirdParty/jquery-1.11.1/jquery.js"></script>
+  <script type="text/javascript" src="MyResources/ThirdParty/jquery-plugins/colorpicker/js/colorpicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="MyResources/ThirdParty/jquery-plugins/colorpicker/css/colorpicker.css">
+  <link rel="stylesheet" type="text/css" href="MyResources/ThirdParty/jquery-plugins/colorpicker/css/layout.css">
+
+  <script type="text/javascript" src="MyResources/ThirdParty/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="MyResources/ThirdParty/font-awesome-4.2.0/css/font-awesome.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="MyResources/ThirdParty/zeroclipboard/ZeroClipboard.js"></script>
+
+  <script type="text/javascript" src="MyResources/js/app4d13.js?20170702"></script>
+
+  <script type="text/javascript" src="MyResources/ThirdParty/amcharts/lib/ammap.js"></script>
+  <script type="text/javascript" src="MyResources/ThirdParty/amcharts/lib/maps/js/worldHigh.js"></script>
+  <script type="text/javascript" src="MyResources/ThirdParty/amcharts/lib/plugins/export/export7c3e.js?1190415"></script>
+  <link rel="stylesheet" type="text/css" href="MyResources/ThirdParty/amcharts/lib/plugins/export/export.css">
+  <script type="text/javascript" src="MyResources/ThirdParty/amcharts/themes/app.js"></script>
+</body>
+
+</html>

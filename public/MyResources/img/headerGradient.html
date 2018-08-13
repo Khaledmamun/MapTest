@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="icon" type="image/x-icon" href="https://www.amcharts.com/favicon.ico" />
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+<script>
+	if ( screen.width >= 768 && screen.width <= 1136 ) {
+		var ratio = Math.round( screen.width / 13 ) / 100;
+		document.getElementById( "viewport" ).setAttribute( "content", "width=1300, initial-scale=" + ratio );
+	}
+</script>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.amcharts.com/xmlrpc.php">
+<title>Page not found - amCharts</title>
+
+<meta name="robots" content="noindex,follow" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Page not found - amCharts" />
+<meta property="og:site_name" content="amCharts" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Page not found - amCharts" />
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="amCharts &raquo; Feed" href="https://www.amcharts.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="amCharts &raquo; Comments Feed" href="https://www.amcharts.com/comments/feed/" />
+<link rel='stylesheet' id='amcharts2-style-css' href='https://www.amcharts.com/wp-content/themes/amcharts2/css/main.css?ver=20180522-01' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='https://www.amcharts.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.amcharts.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.amcharts.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.9.7" />
+<!--[if lt IE 9]>
+  <script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/html5shiv.min.js?ver=20180522-01'></script>
+  <script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/respond.min.js?ver=20180522-01'></script>
+  <![endif]-->
+
+<script>
+  // Indicates current version of the Privacy policy
+  var amcharts2_policy_version = 2018052201;
+  </script>
+</head>
+<body class="error404">
+<div id="page" class="site">
+<header id="masthead" class="site-header" role="banner">
+<div class="site-branding">
+<a href="https://www.amcharts.com/" id="logo" rel="home">amCharts</a>
+<a href="https://www.amcharts.com/" id="amcharts" rel="home" class="trans-all">amCharts</a>
+</div>
+<a class="menu-toggle" data-controls="site-navigation" aria-controls="primary-menu" aria-expanded="false">Primary Menu</a>
+<nav id="site-navigation" class="main-navigation trans-pos-horiz" role="navigation">
+<div class="menu-main-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-25"><a href="https://www.amcharts.com/products/">Products</a>
+<ul class="sub-menu">
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="https://www.amcharts.com/javascript-charts/"><i class="icon icon-charts"></i>JavaScript <strong>Charts</strong></a></li>
+<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="https://www.amcharts.com/stock-chart/"><i class="icon icon-stock"></i>JavaScript Stock <strong>Chart</strong></a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://www.amcharts.com/javascript-maps/"><i class="icon icon-maps"></i>JavaScript <strong>Maps</strong></a></li>
+<li id="menu-item-41" class="overall menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a href="https://www.amcharts.com/products/">Show all products and tools</a></li>
+</ul>
+</li>
+<li id="menu-item-137" class="demo menu-item menu-item-type-demo menu-item-object-cpt_archive menu-item-137"><a href="https://www.amcharts.com/demos/">Demos</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.amcharts.com/download/">Download</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.amcharts.com/online-store/">Buy</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://www.amcharts.com/support/">Support</a></li>
+<li id="menu-item-6949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6949"><a href="https://www.amcharts.com/knowledge-base/">Docs</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="https://www.amcharts.com/resources/">Resources</a></li>
+<li id="menu-item-7136" class="social md-only menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7136"><a href="#">Find us on</a>
+<ul class="sub-menu">
+<li id="menu-item-7137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7137"><a href="https://www.facebook.com/amcharts"><i class="icon icon-facebook" title="Facebook"></i></a></li>
+<li id="menu-item-7138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7138"><a href="https://www.twitter.com/amcharts"><i class="icon icon-twitter" title="Twitter"></i></a></li>
+<li id="menu-item-7139" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7139"><a href="https://plus.google.com/+amcharts/"><i class="icon icon-google" title="Google+"></i></a></li>
+<li id="menu-item-7140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7140"><a href="https://www.linkedin.com/company/amcharts"><i class="icon icon-linkedin" title="LinkedIn"></i></a></li>
+</ul>
+</li>
+</ul></div> </nav>
+<div class="header-tools">
+<form role="search" method="get" class="search-form" action="https://www.amcharts.com/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+</label>
+<input type="submit" class="search-submit" value="Search" />
+</form> <div class="share-this" role="navigation">
+<a class="share-this-toggle trans-all">Click to share this page</a>
+<div class="share-this-content">
+Share<span class="md-hide"> this on</span> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.amcharts.com%2Fvisited_countries%2Fstatic%2Fimg%2FheaderGradient.png" onclick="javascript:window.open( this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon icon-facebook2 smaller hide-text trans-all">Share this on Facebook</i></a>
+<a href="https://twitter.com/intent/tweet?text=Page+not+found+-+amCharts&url=https%3A%2F%2Fwww.amcharts.com%2Fvisited_countries%2Fstatic%2Fimg%2FheaderGradient.png&via=amcharts"><i class="icon icon-twitter2 smaller hide-text trans-all">Share this on Twitter</i></a>
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.amcharts.com%2Fvisited_countries%2Fstatic%2Fimg%2FheaderGradient.png" onclick="javascript:window.open( this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon icon-google2 smaller hide-text trans-all">Share this on Google+</i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.amcharts.com%2Fvisited_countries%2Fstatic%2Fimg%2FheaderGradient.png&summary=Page+not+found+-+amCharts&source=amcharts" onclick="javascript:window.open( this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon icon-linkedin2 smaller hide-text trans-all">Share this on LinedIn</i></a>
+<a href="mailto:?subject=Page+not+found+-+amCharts&body=https%3A%2F%2Fwww.amcharts.com%2Fvisited_countries%2Fstatic%2Fimg%2FheaderGradient.png&via=amcharts"><i class="icon icon-mail2 smaller hide-text trans-all">Share this via email</i></a>
+</div>
+</div> </div>
+<a href="https://live.amcharts.com/" id="editor-link">Live Editor</a>
+</header>
+<div id="content" class="site-content">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+<header class="page-header hero">
+<div class="content-col">
+<h1 class="page-title">404 Page Not Found</h1>
+</div>
+</header>
+<div class="page-content content-col">
+<h2>Oops! That was not supposed to happen :(</h2>
+<p>It looks like nothing was found at this location. Maybe try the search below?</p>
+<p><form role="search" method="get" class="search-form" action="https://www.amcharts.com/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+</label>
+<input type="submit" class="search-submit" value="Search" />
+</form></p>
+<p data-height="442" data-theme-id="24419" data-slug-hash="b68acbd77c8227f31f8de600780895df" data-default-tab="result" data-user="amcharts" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/team/amcharts/pen/b68acbd77c8227f31f8de600780895df/">404</a> by amCharts (<a href="https://codepen.io/amcharts">@amcharts</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</main>
+</div>
+</div>
+<footer class="site-footer" role="banner">
+<div class="content-col">
+<div class="row">
+<div class="col-md-4 col-sm-12">
+<div>
+<a href="https://www.amcharts.com/" id="logo2" rel="home">amCharts</a>
+</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>More info</h4><div class="menu-info-container"><ul id="menu-info" class="menu"><li id="menu-item-76" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a href="https://groups.google.com/forum/#!forum/amcharts">Release Announcements</a></li>
+<li id="menu-item-6844" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6844"><a href="https://www.amcharts.com/accessibility/">Accessibility Features</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://www.amcharts.com/about/">About amCharts</a></li>
+<li id="menu-item-9430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9430"><a href="https://www.amcharts.com/about/press-kit/">Press Kit</a></li>
+<li id="menu-item-7079" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-7079"><a href="https://www.amcharts.com/blog/">amCharts Blog</a></li>
+<li id="menu-item-8770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8770"><a href="https://www.amcharts.com/kbase/?recent=1">New in Knowledge Base</a></li>
+</ul></div></div> </div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>Products</h4><div class="menu-products-container"><ul id="menu-products" class="menu"><li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="https://www.amcharts.com/javascript-charts/">JavaScript Charts</a></li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://www.amcharts.com/stock-chart/">JavaScript Stock Chart</a></li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://www.amcharts.com/javascript-maps/">JavaScript Maps</a></li>
+<li id="menu-item-8766" class="menu-item menu-item-type-plugin menu-item-object-cpt_archive menu-item-8766"><a href="https://www.amcharts.com/plugins/">Plugins</a></li>
+<li id="menu-item-8769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8769"><a href="https://wordpress.org/plugins/amcharts-charts-and-maps/">WordPress Plugin</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="https://www.amcharts.com/products/">All products and tools</a></li>
+</ul></div></div> </div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>Tools &#038; Resources</h4><div class="menu-tools-resources-container"><ul id="menu-tools-resources" class="menu"><li id="menu-item-83" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83"><a href="https://live.amcharts.com/">Online Chart Editor</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="https://pixelmap.amcharts.com/">Pixel Map Generator</a></li>
+<li id="menu-item-8768" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8768"><a href="https://www.amcharts.com/svg-maps/">Free SVG Maps</a></li>
+<li id="menu-item-6845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6845"><a href="https://www.amcharts.com/visited_countries/">Visited Countries Map</a></li>
+<li id="menu-item-6846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6846"><a href="https://www.amcharts.com/visited_states/">Visited States Map</a></li>
+<li id="menu-item-8767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8767"><a href="https://weather.amcharts.com/">Weather Map</a></li>
+</ul></div></div> </div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>Contact Us</h4><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a href="mailto:contact@amcharts.com">contact@amcharts.com</a></li>
+<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://www.amcharts.com/support/">Support Center</a></li>
+</ul></div></div><div role="navigation"><h4>Legal Stuff</h4><div class="menu-legal-stuff-container"><ul id="menu-legal-stuff" class="menu"><li id="menu-item-9940" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9940"><a href="https://www.amcharts.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-9939" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9939"><a href="https://www.amcharts.com/terms-conditions/">Terms &#038; Conditions</a></li>
+</ul></div></div> </div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-push-4 col-sm-12 subfooter">
+<div class="row">
+<div class="col-md-6 col-sm-12 col-xs-12" role="nav">
+<div class="menu-social-container"><ul id="social-menu" class="menu"><li id="menu-item-132" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-132"><a href="https://www.facebook.com/amcharts"><i class="icon icon-facebook"></i>Facebook</a></li>
+<li id="menu-item-133" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-133"><a href="https://www.twitter.com/amcharts"><i class="icon icon-twitter"></i>Twitter</a></li>
+<li id="menu-item-134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-134"><a href="https://plus.google.com/+amcharts/"><i class="icon icon-google"></i>Google+</a></li>
+<li id="menu-item-135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135"><a href="https://www.linkedin.com/company/amcharts"><i class="icon icon-linkedin"></i>LinkedIn</a></li>
+</ul></div> </div>
+<div class="col-md-6 col-sm-12 col-xs-12 pull-right" id="copyright" role="contentinfo">
+Copyright © 2006-2018, amCharts. All rights reserved. </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="notices" class="trans-all">
+<div class="sticky-notice content-col row trans-all" id="notice_policy">
+<div class="col-md-9">
+We use cookies on our website to support technical features that enhance your user experience. We also collect anonymous analytical data, as described in our <a href="https://www.amcharts.com/privacy-policy/">Privacy policy</a>.
+</div>
+<div class="col-md-3">
+<input type="button" value="I agree" class="button" />
+</div>
+</div>
+<div class="sticky-notice only-bottom content-col row trans-all" id="subscribe_news">
+<div class="col-md-9">
+<p>Would you like to stay in touch with us? Click the button below to <b>subscribe to amCharts News</b> - a newsletter sent only when we have something really cool!</p>
+</div>
+<div class="col-md-3">
+<input type="button" value="Subscribe" class="button lite agree" />
+<input type="button" value="Not interested" class="button lite not_interested" />
+</div>
+</div>
+<div class="sticky-notice only-bottom content-col row trans-all" id="subscribe_dataviz">
+<div class="col-md-9">
+<p>Fancy a monthly DataViz-related tip? Use the button below to <b>subscribe to DataViz Tips</b> newsletter.</p>
+</div>
+<div class="col-md-3">
+<input type="button" value="Subscribe" class="button lite agree" />
+<input type="button" value="Not interested" class="button lite not_interested" />
+</div>
+</div>
+</div>
+<script type='text/javascript' src='https://www.amcharts.com/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/main.js?ver=20180522-01'></script>
+<script type='text/javascript' src='https://www.amcharts.com/wp-includes/js/wp-embed.min.js?ver=4.9.7'></script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22221037-1', 'auto', {'allowLinker': true});
+  ga('send', 'pageview');
+  ga('require', 'linker');
+  ga('linker:autoLink', ['amcharts.cleverbridge.com']);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2b927c5092","applicationID":"5849300","transactionName":"NABbZxNUWRAEWhcKWA1KeFAVXFgNSg1TVw==","queueTime":0,"applicationTime":809,"atts":"GEdYEVtOSh4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
